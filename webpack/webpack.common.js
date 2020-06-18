@@ -61,15 +61,18 @@ const CONFIG = {
             {
                 test: /\.scss$/,
                 use: [
-                    // {
-                    //     loader: MiniCssExtractPlugin.loader,
-                    //     options: {
-                    //         hmr: process.env.NODE_ENV === "development",
-                    //     },
-                    // },
+                    {
+                        loader: "style-loader",
+                        options: {
+                            esModule: true,
+                        },
+                    },
                     {
                         loader: "css-loader",
                         options: {
+                            modules: {
+                                localIdentName: "[local]",
+                            },
                             sourceMap: true,
                         },
                     },

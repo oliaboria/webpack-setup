@@ -1,5 +1,9 @@
 import React from "react";
 
-const MyComponent: React.FC = () => <div>My Component</div>;
+import "./myComponent.style.scss";
+
+const MyComponent: React.FC = () => (
+    <div className="my-component">My Component</div>
+);
 
 export default MyComponent;

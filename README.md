@@ -6,3 +6,4 @@ Webpack setup for React and TS
 
 1. Install packages
 2. Add Editor config
+3. CSS modules
