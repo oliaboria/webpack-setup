@@ -10,7 +10,7 @@ const PATH_DIST = join(__dirname, "../dist");
 
 const CONFIG = {
     entry: {
-        index: "./index.js",
+        index: "./index.tsx",
     },
 
     output: {
@@ -89,12 +89,12 @@ const CONFIG = {
                 exclude: /node_modules/,
                 use: [
                     "ts-loader",
-                    // {
-                    //     loader: "eslint-loader",
-                    //     options: {
-                    //         emitWarning: true,
-                    //     },
-                    // },
+                    {
+                        loader: "eslint-loader",
+                        options: {
+                            emitWarning: true,
+                        },
+                    },
                 ],
             },
             {

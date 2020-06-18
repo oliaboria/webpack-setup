@@ -1,0 +1,71 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "plugins": ["@typescript-eslint", "prettier", "cypress"],
+    "extends": [
+        "airbnb-base",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended",
+        "plugin:cypress/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "max-len": [
+            "error",
+            120,
+            4,
+            {
+                "ignoreUrls": true,
+                "ignoreComments": false,
+                "ignoreRegExpLiterals": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true
+            }
+        ],
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "import/extensions": 0,
+        "import/order": [
+            "error",
+            {
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "react/jsx-boolean-value": ["error", "never"],
+        "prettier/prettier": ["error"]
+    },
+    "overrides": [
+        {
+            "files": ["webpack.*.js"],
+            "rules": {
+                "@typescript-eslint/camelcase": 0,
+                "@typescript-eslint/explicit-function-return-type": 0,
+                "@typescript-eslint/no-var-requires": 0,
+                "import/no-extraneous-dependencies": 0
+            }
+        }
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx", ".svg"]
+            }
+        }
+    }
+}
