@@ -1,0 +1,12 @@
+.prettierignore
+.DS_Store
+.editorconfig
+.gitignore
+.stylelintrc
+.stylelintignore
+package-lock.json
+coverage/
+clientlib/
+dynamicObject.groovy
+sonar-project.properties
+analytic.js

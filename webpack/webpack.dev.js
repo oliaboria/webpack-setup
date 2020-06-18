@@ -1,15 +1,15 @@
-const webpack = require("webpack");
-const merge = require("webpack-merge");
+const webpack = require('webpack');
+const merge = require('webpack-merge');
 
-const { CONFIG, PATH_DIST } = require("./webpack.common.js");
+const { CONFIG, PATH_DIST } = require('./webpack.common.js');
 
-const HOST = "localhost";
+const HOST = 'localhost';
 const PORT = 3000;
 
 module.exports = (env) =>
     merge(CONFIG, {
-        mode: "development",
-        devtool: "cheap-module-source-map",
+        mode: 'development',
+        devtool: 'cheap-module-source-map',
 
         plugins: [new webpack.HotModuleReplacementPlugin()],
 

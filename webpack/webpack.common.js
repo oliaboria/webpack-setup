@@ -1,35 +1,35 @@
-const { join } = require("path");
+const { join } = require('path');
 
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const ScriptExtensionPlugin = require("script-ext-html-webpack-plugin");
-const StylelintPlugin = require("stylelint-webpack-plugin");
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
-const PATH_DIST = join(__dirname, "../dist");
+const PATH_DIST = join(__dirname, '../dist');
 
 const CONFIG = {
     entry: {
-        index: "./index.tsx",
+        index: './index.tsx',
     },
 
     output: {
         path: PATH_DIST,
-        filename: "[name].[hash:8].bundle.js",
-        chunkFilename: "[name].[hash:8].chunk.js",
+        filename: '[name].[hash:8].bundle.js',
+        chunkFilename: '[name].[hash:8].chunk.js',
     },
 
     resolve: {
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".scss", ".svg"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.svg'],
     },
 
     optimization: {
         splitChunks: {
             name: true,
-            chunks: "all",
+            chunks: 'all',
             cacheGroups: {
                 vendor: {
-                    name: "vendor",
+                    name: 'vendor',
                     test: /[\\]node_modules[\\/]/,
                 },
             },
@@ -38,12 +38,12 @@ const CONFIG = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "index.html",
-            inject: "body",
-            filename: "index.html",
+            template: 'index.html',
+            inject: 'body',
+            filename: 'index.html',
         }),
         new StylelintPlugin({
-            configFile: ".stylelintrc",
+            configFile: '.stylelintrc',
         }),
         // new MiniCssExtractPlugin({
         //     filename: "[name].css",
@@ -62,22 +62,22 @@ const CONFIG = {
                 test: /\.scss$/,
                 use: [
                     {
-                        loader: "style-loader",
+                        loader: 'style-loader',
                         options: {
                             esModule: true,
                         },
                     },
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: "[local]",
+                                localIdentName: '[local]',
                             },
                             sourceMap: true,
                         },
                     },
                     {
-                        loader: "sass-loader",
+                        loader: 'sass-loader',
                         options: {
                             sourceMap: true,
                         },
@@ -88,9 +88,9 @@ const CONFIG = {
                 test: /\.ts(x?)|.js|.jsx?$/,
                 exclude: /node_modules/,
                 use: [
-                    "ts-loader",
+                    'ts-loader',
                     {
-                        loader: "eslint-loader",
+                        loader: 'eslint-loader',
                         options: {
                             emitWarning: true,
                         },
@@ -101,13 +101,13 @@ const CONFIG = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: "svg-url-loader",
+                        loader: 'svg-url-loader',
                     },
                 ],
             },
             {
                 test: /\.(otf)|.(ttf)|.(png)$/,
-                use: ["file-loader"],
+                use: ['file-loader'],
             },
         ],
     },

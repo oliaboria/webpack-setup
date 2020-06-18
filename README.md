@@ -9,3 +9,4 @@ Webpack setup for React and TS
 3. CSS modules
 4. ES Lint
 5. Style Lint
+6. Prettier
