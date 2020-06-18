@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const ScriptExtensionPlugin = require("script-ext-html-webpack-plugin");
-// const StylelintPlugin = require("stylelint-webpack-plugin");
+const StylelintPlugin = require("stylelint-webpack-plugin");
 
 const PATH_DIST = join(__dirname, "../dist");
 
@@ -42,9 +42,9 @@ const CONFIG = {
             inject: "body",
             filename: "index.html",
         }),
-        // new StylelintPlugin({
-        //     configFile: ".stylelintrc",
-        // }),
+        new StylelintPlugin({
+            configFile: ".stylelintrc",
+        }),
         // new MiniCssExtractPlugin({
         //     filename: "[name].css",
         // }),
