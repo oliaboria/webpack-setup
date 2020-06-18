@@ -2,12 +2,12 @@ import { combineReducers, createStore } from "redux";
 
 const initialState = {};
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState) => {
     return state;
 };
 
 const rootReducer = combineReducers({
-    reducer: reducer,
+    reducer,
 });
 
 const store = createStore(rootReducer);
